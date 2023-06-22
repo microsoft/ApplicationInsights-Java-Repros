@@ -1,0 +1,45 @@
+{
+  "connectionString": "<your connection string>",
+  "role": {
+    "name": "master"
+  },
+  "sampling": {
+    "percentage": 100
+  },
+  "heartbeat": {
+    "intervalSeconds": 60
+  },
+  "selfDiagnostics": {
+    "level": "DEBUG"
+  },
+  "instrumentation": {
+    "logging": {
+      "level": "ALL"
+    }
+  },
+  "preview": {
+    "sampling": {
+      "overrides": [
+        {
+          "telemetryType": "dependency",
+          "attributes": [
+            {
+              "key": "az.namespace",
+              "value": "Microsoft.EventHub",
+              "matchType": "strict"
+            },
+            {
+              "key": "peer.address",
+              "value": ".*.servicebus.windows.net",
+              "matchType": "regexp"
+            }
+          ],
+          "percentage": 0
+        }
+      ]
+    }
+  },
+  "customDimensions": {
+    "service.version": "demo"
+  }
+}
