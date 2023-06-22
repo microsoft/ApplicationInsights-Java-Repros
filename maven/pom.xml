@@ -24,6 +24,11 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.azure</groupId>
+      <artifactId>azure-messaging-eventhubs</artifactId>
+      <version>5.10.1</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -52,12 +57,36 @@
             <artifactItem>
               <groupId>com.microsoft.azure</groupId>
               <artifactId>applicationinsights-agent</artifactId>
-              <version>3.4.6</version>
+              <version>3.4.12</version>
               <outputDirectory>${project.build.directory}/agent</outputDirectory>
               <destFileName>applicationinsights-agent.jar</destFileName>
             </artifactItem>
           </artifactItems>
         </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.0.2</version>
+        <executions>
+          <execution>
+            <id>copy-resource-one</id>
+            <phase>package</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/target/agent</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}/src/main/resources/</directory>
+                  <includes>
+                    <include>applicationinsights.json</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
