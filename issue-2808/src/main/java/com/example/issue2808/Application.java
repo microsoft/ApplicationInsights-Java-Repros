@@ -30,6 +30,7 @@ public class Application {
             .connectionString(CONNECTION_STRING)
             .processor()
             .queueName(QUEUE_NAME)
+            .maxConcurrentCalls(2)
             .processMessage(Application::processMessage)
             .processError(Application::processError)
             .buildProcessorClient();
