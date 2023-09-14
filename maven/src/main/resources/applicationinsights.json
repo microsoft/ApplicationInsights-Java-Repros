@@ -1,0 +1,51 @@
+{
+  "connectionString": "ADD_ME",
+  "role": {
+    "name": "master"
+  },
+  "sampling": {
+    "percentage": 100
+  },
+  "heartbeat": {
+    "intervalSeconds": 60
+  },
+  "selfDiagnostics": {
+    "destination": "file",
+    "level": "DEBUG",
+    "file": {
+      "path": "applicationinsights.log",
+      "maxSizeMb": 20,
+      "maxHistory": 1
+    }
+  },
+  "instrumentation": {
+    "logging": {
+      "level": "ALL"
+    }
+  },
+  "preview": {
+    "sampling": {
+      "overrides": [
+        {
+          "telemetryType": "dependency",
+          "attributes": [
+            {
+              "key": "az.namespace",
+              "value": "Microsoft.EventHub",
+              "matchType": "strict"
+            },
+            {
+              "key": "peer.address",
+              "value": ".*.servicebus.windows.net",
+              "matchType": "regexp"
+            }
+          ],
+          "percentage": 0
+        }
+      ]
+    }
+  },
+  "customDimensions": {
+    "service.version": "demo"
+  }
+}
