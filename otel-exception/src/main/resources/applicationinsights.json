@@ -1,0 +1,7 @@
+{
+  "connectionString": "<your connection string>",
+  "selfDiagnostics": {
+    "destination": "console",
+    "level": "DEBUG"
+  }
+}

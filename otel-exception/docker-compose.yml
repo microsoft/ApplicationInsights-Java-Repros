@@ -1,0 +1,11 @@
+services:
+  azure-storage:
+    image: mcr.microsoft.com/azure-storage/azurite:3.31.0
+    restart: always
+    container_name: azure-storage
+    ports:
+      - "10000:10000"
+      - "10001:10001"
+      - "10002:10002"
+    environment:
+      - 'AZURITE_ACCOUNTS=account1:key1:key1;'
