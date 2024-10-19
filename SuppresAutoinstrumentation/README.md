@@ -1,0 +1,1 @@
+See [issue 3919](https://github.com/microsoft/ApplicationInsights-Java/issues/3919)
