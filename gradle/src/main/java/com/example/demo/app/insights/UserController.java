@@ -17,6 +17,6 @@ public class UserController {
         // send event
         telemetryClient.trackEvent("URI /greeting is triggered");
 
-        return "Hello World!";
+        throw new NullPointerException();
     }
 }
