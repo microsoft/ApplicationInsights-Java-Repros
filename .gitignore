@@ -356,3 +356,11 @@ EventHubSamplingOverrides/output.txt
 EventHubSamplingOverrides/target/*
 
 target/
+
+
+application-local.yml
+application-local.yaml
+application-local.properties
+/applicationinsights.log
+it-test-local.properties
+/docker/**/data/

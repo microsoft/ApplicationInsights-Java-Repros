@@ -1,0 +1,32 @@
+{
+  "selfDiagnostics": {
+    "destination": "console",
+    "level": "DEBUG"
+  },
+  "instrumentation": {
+    "logging": {
+      "enabled": true,
+      "level": "DEBUG"
+    },
+    "jdbc": {
+      "enabled": true,
+      "masking": {
+        "enabled": false
+      }
+    },
+    "springScheduling": {
+      "enabled": true
+    }
+  },
+  "customDimensions": {
+  },
+  "sampling": {
+    "percentage": 100
+  },
+  "preview": {
+    "captureLogbackMarker":  false,
+    "captureLogbackCodeAttributes": false,
+    "captureLoggingLevelAsCustomDimension": true
+  }
+
+}

@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: psd-testapp
+
+logging:
+  level:
+    com.peri: DEBUG

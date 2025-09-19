@@ -1,0 +1,37 @@
+{
+  "selfDiagnostics": {
+    "destination": "file+console",
+    "level": "DEBUG",
+    "file": {
+      "path": "/tmp/applicationinsights.log",
+      "maxSizeMb": 5,
+      "maxHistory": 1
+    }
+  },
+  "instrumentation": {
+    "logging": {
+      "enabled": true,
+      "level": "DEBUG"
+    },
+    "jdbc": {
+      "enabled": true,
+      "masking": {
+        "enabled": false
+      }
+    },
+    "springScheduling": {
+      "enabled": true
+    }
+  },
+  "customDimensions": {
+  },
+  "sampling": {
+    "percentage": 100
+  },
+  "preview": {
+    "captureLogbackMarker":  false,
+    "captureLogbackCodeAttributes": false,
+    "captureLoggingLevelAsCustomDimension": true
+  }
+
+}
